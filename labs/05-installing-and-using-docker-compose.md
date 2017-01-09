@@ -55,5 +55,5 @@ docker-compose up
 ```
 
 Test the app:
-- Voting: http://nodeXY.<PROJECT_NAME>.gluo.io:5000/
-- Result: http://nodeXY.<PROJECT_NAME>.gluo.io:5001/
+- Voting: http://nodeXY.PROJECT_NAME.gluo.io:5000/
+- Result: http://nodeXY.PROJECT_NAME.gluo.io:5001/

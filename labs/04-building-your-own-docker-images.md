@@ -101,7 +101,7 @@ Ensure that no other container is running `docker stop $(docker ps -qa)` and sta
 docker run -d -p 80:80 <DOCKER_HUB_USERNAME>/container-info:latest
 ```
 
-Surf to http://nodeXY.<PROJECT_NAME>.gluo.io to see if everything is working.
+Surf to http://nodeXY.PROJECT_NAME.gluo.io to see if everything is working.
 
 ## Publishing you Docker image
 
