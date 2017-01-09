@@ -11,6 +11,7 @@ Also, before proceeding with this lab, please familiarize yourself first with th
 ## Naming conventions Docker images
 
 Before we can proceed we need to quickly go over the Docker images naming conventions.  A Docker image consists of 3 parts:
+
 1. the user/organization
 2. the actual image name
 3. a tag
