@@ -17,3 +17,4 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 ## Labs
 
 * [01 - Installing Docker](labs/01-installing-docker.md)
+* [02 - Running your first Docker images](labs/02-running-your-first-docker-images.md)
