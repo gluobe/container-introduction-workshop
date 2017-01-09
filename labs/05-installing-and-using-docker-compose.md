@@ -23,3 +23,37 @@ docker-py version: 1.10.6
 CPython version: 2.7.9
 OpenSSL version: OpenSSL 1.0.1t  3 May 2016
 ```
+
+## Using docker-compose
+
+Before we start with docker-compose, let us first stop all running containers:
+
+```
+docker stop $(docker ps -qa)
+```
+
+Clone the voting-app repository:
+
+```
+cd ~
+git clone https://github.com/docker/example-voting-app.git
+```
+
+The example-voting-app stack consists of:
+
+1. python application
+2. nodejs applciation
+3. .NET application
+4. Redis
+5. PostgreSQL
+
+The entire stack can be started using a very simple command:
+
+```
+cd example-voting-app
+docker-compose up
+```
+
+Test the app:
+- Voting: http://nodeXY.<PROJECT_NAME>.gluo.io:5000/
+- Result: http://nodeXY.<PROJECT_NAME>.gluo.io:5001/
