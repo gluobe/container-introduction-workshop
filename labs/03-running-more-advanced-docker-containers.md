@@ -127,3 +127,17 @@ docker images
 
 docker rmi 01f818af747d
 ``` 
+
+## Additional usefull commands
+
+If you want to remove all stopped containers you can use the command below (use with care of course):
+
+```
+docker rm $(docker ps -qa)
+```
+
+If you want to remove all the images you can use the command below:
+
+```
+docker rmi $(docker images -qa)
+```
