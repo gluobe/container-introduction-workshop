@@ -95,7 +95,7 @@ If you want to get "inside" a container you can run the command below, it will s
 docker run -ti centos bash
 ```
 
-NOTE: the -t option is to provide a pseudo tty and the -i is to make stdin interactive, basically you will need these 2 options to be able to interact with your container
+NOTE: the `-t` option is to provide a pseudo tty and the `-i` is to make stdin interactive, basically you will need these 2 options to be able to interact with your container
 
 Once you have issued the above command you will notice that your command prompt has changed, you are now inside your container.  Every command you issue at this prompt will be executed inside the container.  To get back to prompt of your host (Ubuntu) simply issue the `exit` command on the prompt of the container.
 
