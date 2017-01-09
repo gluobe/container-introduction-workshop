@@ -28,19 +28,20 @@ NOTE:
 
 ## Building your first Docker image
 
-Before we can start building Docker images we first need some code (PHP) that we will inject into our Docker image (if you know how to write PHP code you are more than welcome to use your own written code here), we will also already create an empty Dockefile.
+Before we can start building Docker images we first need some code (PHP) and a Dockerfile.  Use the command below to clone an existing repository with some PHP code and a Dockerfile.  If you are comfortable coding PHP you can always make changes to the `index.php`.
 
 ```
 cd ~
 git clone https://github.com/gluobe/container-info
 cd container-info
-touch Dockerfile
 ```
 
-Using your favorite editor (vi, nano, emacs,...), enter the following lines into the Dockerfile file.
+Check the content of the Dockerfile (you can change the maintainer if you want using your favorite editor) using the `cat Dockerfile` command:
 
 ```
 FROM php:apache
+
+MAINTAINER steven@gluo.be
 
 COPY . /var/www/html/
 ```
