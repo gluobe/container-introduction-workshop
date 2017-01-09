@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Before proceeding with this lab, please familiarize yourself with the topics below:
+Before proceeding with this lab, please familiarize yourself first with the topics below:
 
 * [Docker Hub](https://docs.docker.com/engine/reference/glossary/#/docker-hub)
 
