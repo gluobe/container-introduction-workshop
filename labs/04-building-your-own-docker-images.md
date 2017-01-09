@@ -22,7 +22,9 @@ An example would be:
 gluobe/container-info:latest
 ```
 
-NOTE: for official images, the user/organization is ommitted, for example `nging:latest` or `centos:6`
+NOTE:
+- for official images, the user/organization is ommitted, for example `nging:latest` or `centos:6`
+- if no tag is specified the default tag, latest, is used
 
 ## Building your first Docker image
 
