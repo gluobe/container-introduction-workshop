@@ -1,6 +1,6 @@
 # Lab 01 - Installing Docker
 
-The easiest way to install Docker is by running the [https://get.docker.com/](https://get.docker.com/) script:
+The easiest way to install the latest version of Docker is by running the [https://get.docker.com/](https://get.docker.com/) script:
 
 ```
 curl -sSL https://get.docker.com/ | sh

@@ -16,4 +16,4 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 
 ## Labs
 
-* [Installing Docker](labs/01-installing-docker.md)
+* [01 - Installing Docker](labs/01-installing-docker.md)
