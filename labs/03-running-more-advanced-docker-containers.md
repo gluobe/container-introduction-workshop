@@ -70,4 +70,60 @@ In the previous lab we have seen that we can get inside a new container using `d
 docker exec -ti 8243b6b6af62 bash
 ```
 
-When are ready simply type `exit` to exit the container, when you run `docker ps` you will see that your container will still be running.
+When ready with your work inside the container simply type `exit` to exit the container, when you run `docker ps` you will see that your container will still be running.
+
+## Stopping and re-starting containers
+
+To stop a running container, the `docker stop <CONTAINER_ID>` command can be used, for example:
+
+```
+docker stop 8243b6b6af62
+```
+
+To start it again use the `docker start <CONTAINER_ID>` command, keep in mind that stopped container will only show up when you use the `-a` option with the `docker ps` command:
+
+```
+root@ip-172-31-26-41:~# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                         NAMES
+8243b6b6af62        nginx               "nginx -g 'daemon off"   14 minutes ago      Up 13 seconds       0.0.0.0:80->80/tcp, 443/tcp   fervent_chandrasekhar
+a9c2cf7e91ab        nginx               "nginx -g 'daemon off"   28 minutes ago      Up 28 minutes       80/tcp, 443/tcp               backstabbing_ramanujan
+
+root@ip-172-31-26-41:~# docker stop 8243b6b6af62
+8243b6b6af62
+
+root@ip-172-31-26-41:~# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+a9c2cf7e91ab        nginx               "nginx -g 'daemon off"   28 minutes ago      Up 28 minutes       80/tcp, 443/tcp     backstabbing_ramanujan
+
+root@ip-172-31-26-41:~# docker start 8243b6b6af62
+8243b6b6af62
+
+root@ip-172-31-26-41:~# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                         NAMES
+8243b6b6af62        nginx               "nginx -g 'daemon off"   14 minutes ago      Up 2 seconds        0.0.0.0:80->80/tcp, 443/tcp   fervent_chandrasekhar
+a9c2cf7e91ab        nginx               "nginx -g 'daemon off"   28 minutes ago      Up 28 minutes       80/tcp, 443/tcp               backstabbing_ramanujan
+```
+
+## Removing containers and images
+
+If you no longer require a container and/or image you can remove them with the following commands.
+
+Removing a Docker container (keep in mind that the container has to be stopped first `docker stop <CONTAINER_ID>`)
+
+```
+docker ps
+
+# get container ID
+
+docker rm 8243b6b6af62
+```
+
+Removing a Docker images (keep in mind that all containers that were started from that image have to be removed first).
+
+```
+docker images
+
+# get image ID
+
+docker rmi 01f818af747d
+``` 
