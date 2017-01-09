@@ -136,3 +136,29 @@ Resolving Dependencies
 
 [root@ea8c7d186b49 /]# exit
 ```
+
+## Additional useful commands
+
+The command `docker ps` provides you with of the active (running) containers on your host, when you add the `-a` option it will provide you with all the containers on the host (including the terminated containers).
+
+```
+root@ip-172-31-26-41:~# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+root@ip-172-31-26-41:~# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+97c511506036        ubuntu              "hostname"          10 seconds ago      Exited (0) 9 seconds ago                        stoic_kilby
+5753b5c59ecf        centos              "hostname"          24 seconds ago      Exited (0) 22 seconds ago                       cocky_leavitt
+442bfd26fef9        centos              "/bin/bash"         28 seconds ago      Exited (0) 27 seconds ago                       sad_mayer
+16c059e1d095        hello-world         "/hello"            43 seconds ago      Exited (0) 42 seconds ago                       goofy_euler
+```
+
+The command `docker images` provides you with a list of all the images on you host (local copy).
+
+```
+root@ip-172-31-26-41:~# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos              latest              67591570dd29        3 weeks ago         191.8 MB
+ubuntu              latest              104bec311bcd        3 weeks ago         129 MB
+hello-world         latest              c54a2cc56cbb        6 months ago        1.848 kB
+```
