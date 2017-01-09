@@ -1,4 +1,4 @@
-# Lab 02 - Running your first Docker images
+# Lab 02 - Running your first Docker containers
 
 ## Prerequisites 
 
