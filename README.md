@@ -1,6 +1,6 @@
 # Docker Introduction Workshop
 
-In this workshop you will learn how to:
+In this hands-on workshop you will learn how to:
 
 * install Docker on a Linux system
 * run existing Docker images
