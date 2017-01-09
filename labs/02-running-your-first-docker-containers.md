@@ -69,7 +69,7 @@ docker run ubuntu
 
 ## Running one-off commands
 
-As you probably noticed, none the above commands (`docker run centos` and `docker run ubuntu`) produced any output.  The reason is that we did not specify which command we wanted to run inside the container.  By design containers are designed to run a single process and terminated as soon as that process is finished.  Since we did not specify a process (command), our container is terminated immedetiatly after it was started.
+As you probably noticed, none the above commands (`docker run centos` and `docker run ubuntu`) produced any output.  The reason is that we did not specify which command we wanted to run inside the container.  By design containers are made to run a single process and terminated as soon as that process is finished.  Since we did not specify a process (command), our container is terminated immedetiatly after it was started.
 
 To tell Docker to run a specific command, simply add it behind the `docker run <IMAGE_NAME>` command.  Below we will be outputting the hostname of the container:
 
@@ -105,7 +105,7 @@ exit
 root@ip-172-31-26-41:~#
 ```
 
-So now you should be able to run `yum update` inside your CentOS container on an Ubuntu host.
+As an example try to run `yum update` inside your CentOS container on your Ubuntu (apt-get) host.
 
 ```
 root@ip-172-31-26-41:~# yum update

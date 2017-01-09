@@ -18,3 +18,4 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 
 * [01 - Installing Docker](labs/01-installing-docker.md)
 * [02 - Running your first Docker containers](labs/02-running-your-first-docker-containers.md)
+* [03 - Running more advanced Docker containers](labs/03-running-more-advanced-docker-containers.md)
