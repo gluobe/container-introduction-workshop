@@ -119,4 +119,4 @@ Push your image to Docker Hub:
 docker push <DOCKER_HUB_USERNAME>/container-info:latest
 ```
 
-Now you image is publically available on the Docker Hub, so everybody can start using your image (try to run an image from another team).
+Now your image is publically available on the Docker Hub, so everybody can start using your image (try to run an image from another team).
