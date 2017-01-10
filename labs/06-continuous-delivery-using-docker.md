@@ -96,7 +96,7 @@ For demo purposes we will allow anonymous access, this is required for our webho
 * Click the `Webhooks` tab
 * Add a webhook similar to: `http://nodeXY.PROJECT_NAME.gluo.io:8080/job/container-info-deploy//build?token=ChooseYourOwnToken`
 
-** Continuous Delivery in practice
+## Continuous Delivery in practice
 
 * Surf to http://nodeXY.PROJECT_NAME.gluo.io and notice the color of your box
 * Surf to [GitHub](https://github.com) and select your fork of the container-info repository
