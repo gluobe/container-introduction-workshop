@@ -1,4 +1,4 @@
-# Docker Introduction Workshop
+# Container Introduction Workshop
 
 In this hands-on workshop you will learn how to:
 
