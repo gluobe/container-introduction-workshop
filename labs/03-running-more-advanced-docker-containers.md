@@ -59,7 +59,7 @@ a9c2cf7e91ab        nginx               "nginx -g 'daemon off"   13 minutes ago 
 We can now test if our nginx service is indeed accessible from the Internet:
 
 ```
-curl curl nodeXY.<PROJECT_NAME>.gluo.io
+curl nodeXY.<PROJECT_NAME>.gluo.io
 ```
 
 ## Getting "inside" running Docker containers

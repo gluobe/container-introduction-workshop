@@ -53,7 +53,7 @@ When we build the above Dockerfile the following will happen:
 To build the image run the following command:
 
 ```
-docker build -t <DOCKER_HUB_USERNAME>/container-info:latest .
+docker build -t <DOCKERHUB_USERNAME>/container-info:latest .
 ```
 
 NOTE: be sure to copy/type the trailing '.'
@@ -99,7 +99,7 @@ gluobe/container-info   latest              6b9a89afe866        13 minutes ago  
 Ensure that no other container is running `docker stop $(docker ps -qa)` and start a container from your freshly baked Docker image:
 
 ```
-docker run -d -p 80:80 <DOCKER_HUB_USERNAME>/container-info:latest
+docker run -d -p 80:80 <DOCKERHUB_USERNAME>/container-info:latest
 ```
 
 Surf to http://nodeXY.PROJECT_NAME.gluo.io to see if everything is working.
@@ -117,7 +117,7 @@ docker login
 Push your image to Docker Hub:
 
 ```
-docker push <DOCKER_HUB_USERNAME>/container-info:latest
+docker push <DOCKERHUB_USERNAME>/container-info:latest
 ```
 
 Now your image is publically available on the Docker Hub, so everybody can start using your image (try to run an image from another team).

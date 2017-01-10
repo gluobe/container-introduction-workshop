@@ -15,6 +15,8 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 * Windows: please download and install Putty from [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 * Mac/Linux: an SSH terminal is preinstalled on your system
 
+NOTE: if you want to do this workshop on your own simply launch an Ubuntu server in the cloud or in a VM
+
 ## Labs
 
 * [01 - Installing Docker](labs/01-installing-docker.md)
@@ -23,3 +25,4 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 * [04 - Building your own Docker images](labs/04-building-your-own-docker-images.md)
 * [05 - Installing and using docker-compose](labs/05-installing-and-using-docker-compose.md)
 * [06 - Continuous Delivery using Docker](labs/06-continuous-delivery-using-docker.md)
+* [07 - Creating a Docker cluster](labs/07-creating-a-docker-cluster.md)
