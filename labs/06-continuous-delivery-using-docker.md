@@ -12,7 +12,7 @@ Also, before proceeding with this lab, please familiarize yourself first with th
 
 Using a browser surf to https://github.com/gluobe/container-info and click the `Fork` button on the top right of the page.  This should take less than a minute and aftwerwards you will have a fork of the gluobe/container-info repository under you own GitHub account.
 
-## Create an automated build in Docker Hub
+## Docker Hub - create an automated build
 
 * Surf to [https://hub.docker.com/](https://hub.docker.com/)
 * Login if not already logged-in
@@ -35,7 +35,7 @@ NOTE:
 - we are adding the `--name` tag so we can more easily stop and start the container
 - it is important that you are starting your own container, so make sure you replace <DOCKERHUB_USERNAME> with your Docker Hub username
 
-## Start a Jenkins Container
+## Jenkins - starting a Jenkins container 
 
 Start a Jenkins container using the following command:
 
@@ -45,7 +45,7 @@ docker run -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/
 
 NOTE: do not worry to much about the `-v` options, these are required to run Docker inside of Docker (this is out-of-scope for an introduction course)
 
-## Configure Jenkins
+## Jenkins - basic installation and configuration 
 
 Surf to http://nodeXY.PROJECT_NAME.gluo.io:8080, you will see that you need to enter a secret first.  To get the secret you will need to run a command inside the container, this can easily be done using the following command:
 
@@ -55,7 +55,7 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Click the left button to install the most common plugins.  When the installation of the additional plugins is finished create an admin user (use `admin` for both username and password).
 
-## Create a Jenkins job
+## Jenkins - create a deploy job 
 
 * Click the `create new job` links
 * Enter a name (for example: container-info-deploy) and select `Freestyle project` and click the `OK` button
@@ -78,12 +78,32 @@ docker run -d -p 80:80 --name container-info <DOCKERHUB_USERNAME>/container-info
 * Enter a random TOKEN_NAME, for example "ChooseYourOwnToken"
 * Click the `Apply` button and then the `Save` button
 
-## Decrease security (for webhook access)
+## Jenkins - decrease security (for webhook access)
 
-For demo purposes we will allow anonymous access, required for webhook access.  This is, of course, not a recommended setup for production environments.
+For demo purposes we will allow anonymous access, this is required for our webhook to work.  This is, of course, not a recommended setup for production environments.
 
 * Click the Jenkins logo on the top left
 * Click the `Manage Jenkins` link
 * Click the `Configure Global Security`
 * Under `Access Control` and `Authorization` select the `Anyone can do anything` option
 * Click the `Apply` button and then the `Save` button
+
+## Docker Hub - create webhook in Docker Hub that triggers the Jenkins job
+
+* Surf to [https://hub.docker.com/](https://hub.docker.com/)
+* Login if not already logged-in
+* Search for your image an click `Details` 
+* Click the `Webhooks` tab
+* Add a webhook similar to: `http://nodeXY.PROJECT_NAME.gluo.io:8080/job/container-info-deploy//build?token=ChooseYourOwnToken`
+
+** Continuous Delivery in practice
+
+* Surf to http://nodeXY.PROJECT_NAME.gluo.io and notice the color of your box
+* Surf to [GitHub](https://github.com) and select your fork of the container-info repository
+* Click on the `index.php` file
+* Click the edit icon (top right)
+* Search for "CHANGE COLOR BELOW" and change the color
+* Add a commit message on the bottom, for example "changed color to pink"
+* Click the `Commit Changes` button
+* Go to you image on Docker Hub, click `Details` and click the `Build Details` tab (a new build should have been triggered, it will be in either queued or building state)
+* As soon as the build is finished you can have a look in Jenkins where the job te redeploy the application will have been triggered
