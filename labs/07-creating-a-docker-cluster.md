@@ -16,15 +16,21 @@ The following command should only be run on `node01` and `node02`:
 docker swarm init --advertise-addr $(hostname -i) 
 ```
 
-The output of the above command should be copied somewhere safe, the other teams will need this output (a command) to have their node join the cluster:
+Ignore the output for now, we will not be adding nodes as workers we will be adding them as masters.
+
+To get the token to join a node as a manager issue the following command:
+
+```
+docker swarm join-token manager
+```
+
+You should get output similar to the output below:
 
 ```
     docker swarm join \
-    --token SWMTKN-1-587xm9zr5tiraj0s7tfpyys60r7fszn6itxhnxhsfucelg833x-eimr2hkkhy30vxrcpzh5t0ala \
-    172.31.5.47:2377
-```
+    --token SWMTKN-1-5tuqlwyknrjhzsmngih5zbvgedcvzmkvtlh6blnzvsrugjgy7k-enu5pw4t5t6fz5vr6atjtrl0i \
+    172.31.16.245:2377
 
-NOTE: if you do happen to lose the command, you can always get it back by running `docker swarm join-token worker` command
 
 ## Joining an existing Docker Swarm cluster
 
@@ -34,8 +40,8 @@ To have your node join the cluster simple run the command that is provided to yo
 
 ```
     docker swarm join \
-    --token SWMTKN-1-587xm9zr5tiraj0s7tfpyys60r7fszn6itxhnxhsfucelg833x-eimr2hkkhy30vxrcpzh5t0ala \
-    172.31.5.47:2377
+    --token SWMTKN-1-5tuqlwyknrjhzsmngih5zbvgedcvzmkvtlh6blnzvsrugjgy7k-enu5pw4t5t6fz5vr6atjtrl0i \
+    172.31.16.245:2377
 ```
 
 ## Verifying the cluster
@@ -63,7 +69,7 @@ ezh08kvrya4rtfywc3ph0fyzi *  ip-172-31-5-47   Ready   Active        Leader
 ```
 ## Start the Docker Swarm visualizer
 
-The Swarm visualizer only has to be run on `node01` and `node02`:
+Start the Docker Swarm visualizer (on all nodes), keep in mind that the Docker Swarm node only works if your node is a manager node (so for now `node01` and `node02`):
 
 ```
 docker run -it -d -p 8000:8080 -v /var/run/docker.sock:/var/run/docker.sock manomarks/visualizer
@@ -93,5 +99,5 @@ Now that we got everything up-and-running, the fun begins!  You can easily scale
 docker service scale container-info=2
 docker service scale container-info=5
 docker service scale container-info=1
-docker service scale container-info-10
+docker service scale container-info=10
 ```
