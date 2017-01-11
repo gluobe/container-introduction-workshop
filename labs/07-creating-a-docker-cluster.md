@@ -101,3 +101,19 @@ docker service scale container-info=5
 docker service scale container-info=1
 docker service scale container-info=10
 ```
+
+## ODD cluster
+
+```
+    docker swarm join \
+    --token SWMTKN-1-4tjoryest7nbtxza22nzjgh43xqsf6f8opjz887a6gkhiwaizf-aarfincvrtvrn3x00e41b4akp \
+    172.31.21.137:2377
+```
+
+### EVEN cluser
+
+```
+    docker swarm join \
+    --token SWMTKN-1-0nm76k666jshiqeybn7zxzurtjrpftz4vh6lk2lh9lpf571i7e-b03em1ezf31ut0zjh05cer8m6 \
+    172.31.4.44:2377
+```
